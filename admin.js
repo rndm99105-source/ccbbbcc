@@ -2,22 +2,10 @@
 
 const STORAGE_KEYS = {
     submissions: 'bwpr_submissions',
-    password: 'bwpr_admin_pass',
-    session: 'bwpr_admin_session',
     emailSettings: 'bwpr_email_settings'
 };
 
-// Default password hash (admin123)
-const DEFAULT_PASS_HASH = 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3';
-
 // ===== Utility Functions =====
-async function hashPassword(pass) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(pass);
-    const hash = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
 function getSubmissions() {
     try {
         return JSON.parse(localStorage.getItem(STORAGE_KEYS.submissions) || '[]');
@@ -26,10 +14,6 @@ function getSubmissions() {
 
 function saveSubmissions(subs) {
     localStorage.setItem(STORAGE_KEYS.submissions, JSON.stringify(subs));
-}
-
-function getPasswordHash() {
-    return localStorage.getItem(STORAGE_KEYS.password) || DEFAULT_PASS_HASH;
 }
 
 function getEmailSettings() {
@@ -74,42 +58,9 @@ function showToast(msg, type = 'success') {
     }, 3000);
 }
 
-// ===== Auth =====
-const loginScreen = document.getElementById('loginScreen');
+// ===== Init on load =====
 const adminApp = document.getElementById('adminApp');
-const loginForm = document.getElementById('loginForm');
-const loginError = document.getElementById('loginError');
-
-// Check existing session
-if (sessionStorage.getItem(STORAGE_KEYS.session) === 'active') {
-    loginScreen.style.display = 'none';
-    adminApp.style.display = 'flex';
-    initDashboard();
-}
-
-loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const pass = document.getElementById('adminPassword').value;
-    const hash = await hashPassword(pass);
-
-    if (hash === getPasswordHash()) {
-        sessionStorage.setItem(STORAGE_KEYS.session, 'active');
-        loginScreen.style.display = 'none';
-        adminApp.style.display = 'flex';
-        loginError.textContent = '';
-        initDashboard();
-    } else {
-        loginError.textContent = 'Incorrect password. Please try again.';
-        document.getElementById('adminPassword').value = '';
-    }
-});
-
-// Logout
-document.getElementById('logoutBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    sessionStorage.removeItem(STORAGE_KEYS.session);
-    location.reload();
-});
+initDashboard();
 
 // ===== Sidebar Navigation =====
 const sidebarLinks = document.querySelectorAll('.sidebar-link[data-tab]');
@@ -352,40 +303,6 @@ document.getElementById('deleteAll').addEventListener('click', () => {
         renderAllSubmissions();
         showToast('All submissions deleted');
     }
-});
-
-// ===== Settings: Change Password =====
-document.getElementById('changePasswordForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const msg = document.getElementById('passMsg');
-    const current = document.getElementById('currentPass').value;
-    const newPass = document.getElementById('newPass').value;
-    const confirm = document.getElementById('confirmPass').value;
-
-    const currentHash = await hashPassword(current);
-    if (currentHash !== getPasswordHash()) {
-        msg.textContent = 'Current password is incorrect.';
-        msg.className = 'settings-msg error';
-        return;
-    }
-
-    if (newPass !== confirm) {
-        msg.textContent = 'New passwords do not match.';
-        msg.className = 'settings-msg error';
-        return;
-    }
-
-    if (newPass.length < 4) {
-        msg.textContent = 'Password must be at least 4 characters.';
-        msg.className = 'settings-msg error';
-        return;
-    }
-
-    const newHash = await hashPassword(newPass);
-    localStorage.setItem(STORAGE_KEYS.password, newHash);
-    msg.textContent = 'Password updated successfully!';
-    msg.className = 'settings-msg success';
-    e.target.reset();
 });
 
 // ===== Settings: Email Notifications =====
