@@ -1,4 +1,4 @@
-// Mobile Navigation
+// ===== Mobile Navigation =====
 const mobileToggle = document.getElementById('mobile-toggle');
 const nav = document.getElementById('nav');
 
@@ -18,13 +18,13 @@ if (mobileToggle && nav) {
     });
 }
 
-// Header scroll
+// ===== Header scroll =====
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// Animated counter
+// ===== Animated counter =====
 function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-count'));
     if (!target) return;
@@ -40,11 +40,71 @@ function animateCounter(el) {
     requestAnimationFrame(tick);
 }
 
-// Contact form
+// ===== Contact Form - Save & Notify =====
 const contactForm = document.getElementById('contact-form');
+
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        // Create submission object
+        const submission = {
+            id: 'sub_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
+            name: data.name || '',
+            phone: data.phone || '',
+            email: data.email || '',
+            service: data.service || '',
+            message: data.message || '',
+            date: new Date().toISOString(),
+            read: false
+        };
+
+        // Save to localStorage
+        try {
+            const submissions = JSON.parse(localStorage.getItem('bwpr_submissions') || '[]');
+            submissions.push(submission);
+            localStorage.setItem('bwpr_submissions', JSON.stringify(submissions));
+        } catch (err) {
+            console.error('Failed to save submission:', err);
+        }
+
+        // Send email notification if configured
+        try {
+            const emailSettings = JSON.parse(localStorage.getItem('bwpr_email_settings') || '{}');
+            if (emailSettings.serviceId && emailSettings.templateId && emailSettings.publicKey && emailSettings.email) {
+                // Load EmailJS dynamically
+                if (!window.emailjs) {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+                    document.head.appendChild(script);
+                    await new Promise(resolve => {
+                        script.onload = resolve;
+                        script.onerror = resolve; // Don't block on failure
+                    });
+                }
+
+                if (window.emailjs) {
+                    emailjs.init(emailSettings.publicKey);
+                    emailjs.send(emailSettings.serviceId, emailSettings.templateId, {
+                        to_email: emailSettings.email,
+                        from_name: 'Website Contact Form',
+                        customer_name: submission.name,
+                        customer_phone: submission.phone,
+                        customer_email: submission.email || 'Not provided',
+                        service_type: submission.service,
+                        message: submission.message || 'No message',
+                        date: new Date().toLocaleString()
+                    }).catch(err => console.log('Email notification failed:', err));
+                }
+            }
+        } catch (err) {
+            console.log('Email notification skipped:', err);
+        }
+
+        // Show success message
         const wrapper = contactForm.closest('.form-wrapper');
         wrapper.innerHTML = `
             <div class="form-success">
@@ -56,7 +116,7 @@ if (contactForm) {
     });
 }
 
-// Smooth scroll
+// ===== Smooth scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const id = this.getAttribute('href');
@@ -69,7 +129,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll reveal
+// ===== Scroll reveal =====
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -95,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-count]').forEach(el => revealObserver.observe(el));
 });
 
-// Reveal CSS
+// Reveal CSS injection
 const s = document.createElement('style');
 s.textContent = `
 .reveal { opacity:0; transform:translateY(20px); transition: opacity .6s cubic-bezier(.4,0,.2,1), transform .6s cubic-bezier(.4,0,.2,1); }
