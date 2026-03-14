@@ -8,18 +8,26 @@
     <title>Bucks Well Pump Repair LLC | 24/7 Well Pump Services in Brooksville, FL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Floating Call Button (Mobile) -->
+    <a href="tel:+13526069104" class="floating-call" aria-label="Call us">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
     <!-- Header / Navigation -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="#" class="logo">
-                <span class="logo-icon">&#128167;</span>
+                <div class="logo-mark">
+                    <i class="fas fa-tint"></i>
+                </div>
                 <div class="logo-text">
-                    <span class="logo-name">Bucks Well Pump Repair</span>
-                    <span class="logo-tagline">LLC</span>
+                    <span class="logo-name">Bucks Well Pump</span>
+                    <span class="logo-tagline">REPAIR LLC</span>
                 </div>
             </a>
             <nav class="nav" id="nav">
@@ -27,7 +35,10 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#reviews" class="nav-link">Reviews</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="tel:+13526069104" class="nav-cta">Call Now</a>
+                <a href="tel:+13526069104" class="nav-cta">
+                    <i class="fas fa-phone-alt"></i>
+                    (352) 606-9104
+                </a>
             </nav>
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -39,53 +50,96 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-badge">
-                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span>5.0 Rating - 309 Reviews</span>
+        <div class="hero-bg">
+            <div class="hero-particle particle-1"></div>
+            <div class="hero-particle particle-2"></div>
+            <div class="hero-particle particle-3"></div>
+            <div class="hero-wave">
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="rgba(255,255,255,0.05)" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,133.3C672,117,768,139,864,170.7C960,203,1056,245,1152,240C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
             </div>
-            <h1>Professional Well Pump<br>Repair &amp; Installation</h1>
-            <p class="hero-subtitle">Serving Brooksville, Spring Hill, and all of Hernando County, Florida. Available <strong>24 hours a day, 7 days a week</strong>.</p>
-            <div class="hero-actions">
-                <a href="tel:+13526069104" class="btn btn-primary btn-lg">
-                    <span class="btn-icon">&#9742;</span>
-                    (352) 606-9104
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge animate-in">
+                <div class="badge-glow"></div>
+                <i class="fas fa-shield-alt"></i>
+                <span>Trusted by 309+ Happy Customers</span>
+            </div>
+            <h1 class="animate-in delay-1">
+                Your Water.<br>
+                <span class="text-gradient">Our Expertise.</span>
+            </h1>
+            <p class="hero-subtitle animate-in delay-2">Professional well pump repair, installation &amp; maintenance in Brooksville, FL. We keep your water flowing <strong>24/7</strong>.</p>
+            <div class="hero-actions animate-in delay-3">
+                <a href="tel:+13526069104" class="btn btn-primary btn-lg btn-glow">
+                    <i class="fas fa-phone-alt"></i>
+                    Call (352) 606-9104
                 </a>
-                <a href="#contact" class="btn btn-outline btn-lg">Get Free Estimate</a>
+                <a href="#contact" class="btn btn-glass btn-lg">
+                    <i class="fas fa-calendar-check"></i>
+                    Free Estimate
+                </a>
+            </div>
+            <div class="hero-trust animate-in delay-4">
+                <div class="hero-rating">
+                    <div class="stars-row">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>5.0 on Google</span>
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-open">
+                    <span class="pulse-dot"></span>
+                    <span>Open 24 Hours</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Trust Bar -->
     <section class="trust-bar">
-        <div class="container trust-bar-inner">
-            <div class="trust-item">
-                <span class="trust-icon">&#9201;</span>
-                <div>
-                    <strong>24/7 Emergency Service</strong>
-                    <span>Always available when you need us</span>
+        <div class="container">
+            <div class="trust-bar-inner">
+                <div class="trust-item">
+                    <div class="trust-icon-wrap">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>24/7 Emergency</strong>
+                        <span>Always available</span>
+                    </div>
                 </div>
-            </div>
-            <div class="trust-item">
-                <span class="trust-icon">&#9989;</span>
-                <div>
-                    <strong>Licensed &amp; Insured</strong>
-                    <span>Fully certified professionals</span>
+                <div class="trust-item">
+                    <div class="trust-icon-wrap">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div>
+                        <strong>Licensed &amp; Insured</strong>
+                        <span>Certified pros</span>
+                    </div>
                 </div>
-            </div>
-            <div class="trust-item">
-                <span class="trust-icon">&#9733;</span>
-                <div>
-                    <strong>5-Star Rated</strong>
-                    <span>309+ verified reviews</span>
+                <div class="trust-item">
+                    <div class="trust-icon-wrap">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <strong>5-Star Rated</strong>
+                        <span>309+ reviews</span>
+                    </div>
                 </div>
-            </div>
-            <div class="trust-item">
-                <span class="trust-icon">&#128176;</span>
-                <div>
-                    <strong>Free Estimates</strong>
-                    <span>No obligation quotes</span>
+                <div class="trust-item">
+                    <div class="trust-icon-wrap">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div>
+                        <strong>Free Estimates</strong>
+                        <span>No obligation</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,76 +149,168 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>Our Services</h2>
-                <p>We provide comprehensive well pump solutions for residential and commercial properties throughout the Brooksville and greater Hernando County area.</p>
+                <span class="section-tag"><i class="fas fa-wrench"></i> What We Do</span>
+                <h2>Expert Well Pump <span class="text-gradient-dark">Services</span></h2>
+                <p>Comprehensive well pump solutions for homes and businesses across Hernando County.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">&#128295;</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>Well Pump Repair</h3>
-                    <p>Expert diagnosis and repair of all well pump types including submersible, jet, and centrifugal pumps. We get your water flowing again fast.</p>
+                    <p>Expert diagnosis and repair of all well pump types including submersible, jet, and centrifugal pumps.</p>
+                    <a href="tel:+13526069104" class="service-link">Get Help Now <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">&#9881;</div>
+                <div class="service-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-cogs"></i>
+                    </div>
                     <h3>Pump Installation</h3>
-                    <p>Professional installation of new well pumps with quality equipment and proper sizing for your home or business water needs.</p>
+                    <p>Professional installation of new well pumps with quality equipment sized for your water needs.</p>
+                    <a href="tel:+13526069104" class="service-link">Get Help Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">&#128167;</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
                     <h3>Pressure Tank Service</h3>
-                    <p>Repair and replacement of pressure tanks, pressure switches, and related components to maintain consistent water pressure.</p>
+                    <p>Repair and replacement of pressure tanks and switches for consistent water pressure.</p>
+                    <a href="tel:+13526069104" class="service-link">Get Help Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">&#128204;</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-search"></i>
+                    </div>
                     <h3>Well Inspections</h3>
-                    <p>Thorough well system inspections for real estate transactions, routine maintenance, or troubleshooting water quality issues.</p>
+                    <p>Thorough well system inspections for real estate, maintenance, or water quality concerns.</p>
+                    <a href="tel:+13526069104" class="service-link">Get Help Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">&#9889;</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-bolt"></i>
+                    </div>
                     <h3>Electrical &amp; Wiring</h3>
-                    <p>Complete electrical diagnostics, control box repairs, and wiring services for all well pump systems.</p>
+                    <p>Complete electrical diagnostics, control box repairs, and wiring for all pump systems.</p>
+                    <a href="tel:+13526069104" class="service-link">Get Help Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">&#127759;</div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-water"></i>
+                    </div>
                     <h3>Pipe &amp; Line Repair</h3>
-                    <p>All new piping, pipe replacement, leak detection, and waterline repairs from the well to your home.</p>
+                    <p>Pipe replacement, leak detection, and waterline repairs from the well to your home.</p>
+                    <a href="tel:+13526069104" class="service-link">Get Help Now <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About / Why Choose Us Section -->
     <section class="about" id="about">
-        <div class="container about-inner">
-            <div class="about-content">
-                <h2>Your Trusted Local Well Pump Experts</h2>
-                <p>Bucks Well Pump Repair LLC is a locally owned and operated well pump service company based in Brooksville, Florida. We take pride in delivering honest, reliable, and affordable well pump services to homeowners and businesses across Hernando County and surrounding areas.</p>
-                <p>Our experienced team specializes in all aspects of well pump systems - from emergency repairs to complete new installations. We use only quality parts and equipment to ensure long-lasting results, and we stand behind every job we do.</p>
-                <ul class="about-list">
-                    <li>Locally owned and operated in Brooksville, FL</li>
-                    <li>Available 24 hours a day, 7 days a week</li>
-                    <li>Fast response times for emergency situations</li>
-                    <li>Competitive, upfront pricing with no hidden fees</li>
-                    <li>Quality parts and professional workmanship</li>
-                </ul>
-                <a href="tel:+13526069104" class="btn btn-primary">Call Us Today</a>
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-content">
+                    <span class="section-tag"><i class="fas fa-heart"></i> Why Choose Us</span>
+                    <h2>The <span class="text-gradient-dark">Most Trusted</span> Well Pump Team in Hernando County</h2>
+                    <p>Bucks Well Pump Repair LLC is a locally owned and operated company in Brooksville, Florida. We deliver honest, reliable, and affordable well pump services to homeowners and businesses across the region.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-check"><i class="fas fa-check"></i></div>
+                            <div>
+                                <strong>Same-Day Service</strong>
+                                <span>Fast response for emergency situations</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"><i class="fas fa-check"></i></div>
+                            <div>
+                                <strong>Upfront Pricing</strong>
+                                <span>No hidden fees or surprise charges</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"><i class="fas fa-check"></i></div>
+                            <div>
+                                <strong>Quality Parts</strong>
+                                <span>Premium equipment for lasting results</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check"><i class="fas fa-check"></i></div>
+                            <div>
+                                <strong>Locally Owned</strong>
+                                <span>Your neighbors, serving your community</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:+13526069104" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i> Call Us Today
+                    </a>
+                </div>
+                <div class="about-visual">
+                    <div class="stats-grid">
+                        <div class="stat-card stat-highlight">
+                            <div class="stat-icon"><i class="fas fa-star"></i></div>
+                            <span class="stat-number" data-count="309">0</span>
+                            <span class="stat-label">5-Star Reviews</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Availability</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fab fa-google"></i></div>
+                            <span class="stat-number">5.0</span>
+                            <span class="stat-label">Google Rating</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-thumbs-up"></i></div>
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="about-stats">
-                <div class="stat-card">
-                    <span class="stat-number">309+</span>
-                    <span class="stat-label">5-Star Reviews</span>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-list-ol"></i> How It Works</span>
+                <h2>Simple <span class="text-gradient-dark">3-Step</span> Process</h2>
+                <p>Getting your well pump fixed has never been easier.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Call Us</h3>
+                        <p>Give us a call anytime, 24/7. Describe your issue and we'll provide an initial assessment.</p>
+                    </div>
+                    <div class="step-icon"><i class="fas fa-phone-alt"></i></div>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Availability</span>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>We Diagnose</h3>
+                        <p>Our expert team arrives promptly, diagnoses the problem, and gives you a transparent quote.</p>
+                    </div>
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">5.0</span>
-                    <span class="stat-label">Google Rating</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Satisfaction</span>
+                <div class="process-connector"></div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Problem Solved</h3>
+                        <p>We fix or install your pump system efficiently. Your water flows perfectly again!</p>
+                    </div>
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
                 </div>
             </div>
         </div>
@@ -174,189 +320,256 @@
     <section class="reviews" id="reviews">
         <div class="container">
             <div class="section-header">
-                <h2>What Our Customers Say</h2>
-                <p>We are proud to maintain a perfect 5.0-star rating on Google with over 309 verified reviews from satisfied customers.</p>
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</span>
+                <h2>Loved by <span class="text-gradient-dark">309+</span> Customers</h2>
+                <p>Don't just take our word for it. Here's what our customers have to say.</p>
             </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"We contacted Bucks Well Pump Repair and they came out to our home and put a new pump in our system as well as a new jet and all new piping. We were so thrilled with the work. Highly recommend!"</p>
+            <div class="reviews-showcase">
+                <div class="review-card review-featured">
+                    <div class="review-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"We contacted Bucks Well Pump Repair and they came out to our home yesterday and today and put a new pump in our system as well as a new jet and all new piping. We were so thrilled with the work and also the professionalism. Highly recommend!"</p>
                     <div class="review-author">
                         <div class="review-avatar">SM</div>
                         <div>
                             <strong>Sherrie McMullen</strong>
-                            <span>February 2026</span>
+                            <span><i class="fab fa-google"></i> Google Review - Feb 2026</span>
                         </div>
                     </div>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"Amazing service! They came out the same day we called. Professional, courteous, and the price was very fair. Our well pump is working perfectly now. Would definitely call them again."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">JR</div>
-                        <div>
-                            <strong>Satisfied Customer</strong>
-                            <span>Verified Review</span>
+                <div class="reviews-side">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Amazing service! They came out the same day we called. Professional, courteous, and the price was very fair. Our well pump is working perfectly now."</p>
+                        <div class="review-author">
+                            <div class="review-avatar">JR</div>
+                            <div>
+                                <strong>Verified Customer</strong>
+                                <span><i class="fab fa-google"></i> Google Review</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"Best well pump service in Hernando County! Fast, reliable, and honest. They explained everything clearly and didn't try to upsell us on things we didn't need. True professionals."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">DK</div>
-                        <div>
-                            <strong>Satisfied Customer</strong>
-                            <span>Verified Review</span>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Best well pump service in Hernando County! Fast, reliable, and honest. They explained everything clearly and didn't upsell us. True professionals."</p>
+                        <div class="review-author">
+                            <div class="review-avatar">DK</div>
+                            <div>
+                                <strong>Verified Customer</strong>
+                                <span><i class="fab fa-google"></i> Google Review</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="reviews-cta">
-                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="btn btn-outline">See All 309 Reviews on Google</a>
+                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">
+                    <i class="fab fa-google"></i> See All 309 Reviews on Google
+                </a>
             </div>
         </div>
     </section>
 
     <!-- CTA Banner -->
     <section class="cta-banner">
+        <div class="cta-bg">
+            <div class="cta-particle cta-p1"></div>
+            <div class="cta-particle cta-p2"></div>
+        </div>
         <div class="container cta-inner">
-            <h2>Need Well Pump Service?</h2>
-            <p>Don't wait - call us now for fast, reliable well pump repair and installation. Available 24/7 for emergencies.</p>
-            <a href="tel:+13526069104" class="btn btn-primary btn-lg">
-                <span class="btn-icon">&#9742;</span>
-                Call (352) 606-9104
-            </a>
+            <div class="cta-content">
+                <h2>No Water? <span>No Problem.</span></h2>
+                <p>Call now for fast, reliable well pump service. Available around the clock for emergencies.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="tel:+13526069104" class="btn btn-white btn-lg btn-glow-white">
+                    <i class="fas fa-phone-alt"></i>
+                    (352) 606-9104
+                </a>
+                <span class="cta-or">or</span>
+                <a href="#contact" class="btn btn-glass-light btn-lg">
+                    Request Estimate
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="container contact-inner">
-            <div class="contact-info">
-                <h2>Contact Us</h2>
-                <p>Reach out to us anytime - we are available 24 hours a day, 7 days a week to help with your well pump needs.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span class="contact-icon">&#128205;</span>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-envelope"></i> Get In Touch</span>
+                <h2>Contact <span class="text-gradient-dark">Us</span></h2>
+                <p>Available 24/7. Reach out anytime for your well pump needs.</p>
+            </div>
+            <div class="contact-inner">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
-                            <strong>Address</strong>
+                            <strong>Visit Us</strong>
                             <p>7161 Schering St<br>Brooksville, FL 34613</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">&#9742;</span>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
                         <div>
-                            <strong>Phone</strong>
+                            <strong>Call Us</strong>
                             <p><a href="tel:+13526069104">(352) 606-9104</a></p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">&#9201;</span>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
                         <div>
                             <strong>Hours</strong>
                             <p>Open 24 Hours<br>7 Days a Week</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">&#127760;</span>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-globe"></i></div>
                         <div>
                             <strong>Website</strong>
                             <p><a href="https://buckswellpumprepair.com" target="_blank" rel="noopener noreferrer">buckswellpumprepair.com</a></p>
                         </div>
                     </div>
+                    <!-- Map -->
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5!2d-82.5!3d28.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDMzJzAwLjAiTiA4MsKwMzAnMDAuMCJX!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+                            width="100%"
+                            height="220"
+                            style="border:0; border-radius: 12px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Bucks Well Pump Repair LLC Location">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <div class="form-header">
+                        <h3>Request a Free Estimate</h3>
+                        <p>Fill out the form and we'll get back to you ASAP.</p>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <div class="input-wrap">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <div class="input-wrap">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="tel" id="phone" name="phone" required placeholder="(xxx) xxx-xxxx">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <div class="input-wrap">
+                                <i class="fas fa-wrench"></i>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="repair">Well Pump Repair</option>
+                                    <option value="installation">Pump Installation</option>
+                                    <option value="pressure-tank">Pressure Tank Service</option>
+                                    <option value="inspection">Well Inspection</option>
+                                    <option value="electrical">Electrical & Wiring</option>
+                                    <option value="piping">Pipe & Line Repair</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Describe Your Issue</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your well pump issue..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full btn-lg">
+                            <i class="fas fa-paper-plane"></i> Send Request
+                        </button>
+                        <p class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared.</p>
+                    </form>
                 </div>
             </div>
-            <div class="contact-form-wrapper">
-                <h3>Request a Free Estimate</h3>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(xxx) xxx-xxxx">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Needed</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service...</option>
-                            <option value="repair">Well Pump Repair</option>
-                            <option value="installation">Pump Installation</option>
-                            <option value="pressure-tank">Pressure Tank Service</option>
-                            <option value="inspection">Well Inspection</option>
-                            <option value="electrical">Electrical & Wiring</option>
-                            <option value="piping">Pipe & Line Repair</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Describe Your Issue</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your well pump issue..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Request</button>
-                </form>
-            </div>
         </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5!2d-82.5!3d28.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDMzJzAwLjAiTiA4MsKwMzAnMDAuMCJX!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
-            width="100%"
-            height="400"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Bucks Well Pump Repair LLC Location">
-        </iframe>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <a href="#" class="logo">
-                    <span class="logo-icon">&#128167;</span>
-                    <div class="logo-text">
-                        <span class="logo-name">Bucks Well Pump Repair</span>
-                        <span class="logo-tagline">LLC</span>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-mark">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name">Bucks Well Pump</span>
+                            <span class="logo-tagline">REPAIR LLC</span>
+                        </div>
+                    </a>
+                    <p>Professional well pump repair and installation services in Brooksville, FL. Serving Hernando County and surrounding areas 24/7.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#services"><i class="fas fa-chevron-right"></i> Services</a>
+                    <a href="#about"><i class="fas fa-chevron-right"></i> About Us</a>
+                    <a href="#reviews"><i class="fas fa-chevron-right"></i> Reviews</a>
+                    <a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <a href="#services"><i class="fas fa-chevron-right"></i> Well Pump Repair</a>
+                    <a href="#services"><i class="fas fa-chevron-right"></i> Pump Installation</a>
+                    <a href="#services"><i class="fas fa-chevron-right"></i> Pressure Tanks</a>
+                    <a href="#services"><i class="fas fa-chevron-right"></i> Well Inspections</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>7161 Schering St, Brooksville, FL 34613</span>
                     </div>
-                </a>
-                <p>Professional well pump repair and installation services in Brooksville, FL. Serving Hernando County and surrounding areas 24/7.</p>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+13526069104">(352) 606-9104</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Open 24/7</span>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="#services">Services</a>
-                <a href="#about">About Us</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-services">
-                <h4>Services</h4>
-                <a href="#services">Well Pump Repair</a>
-                <a href="#services">Pump Installation</a>
-                <a href="#services">Pressure Tank Service</a>
-                <a href="#services">Well Inspections</a>
-                <a href="#services">Electrical & Wiring</a>
-                <a href="#services">Pipe & Line Repair</a>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p>7161 Schering St<br>Brooksville, FL 34613</p>
-                <p><a href="tel:+13526069104">(352) 606-9104</a></p>
-                <p>Open 24/7</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
+            <div class="footer-bottom">
                 <p>&copy; 2026 Bucks Well Pump Repair LLC. All rights reserved.</p>
             </div>
         </div>
